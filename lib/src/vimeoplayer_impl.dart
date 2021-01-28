@@ -410,6 +410,7 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
                             looping: widget.looping,
                             enableFullScreen: widget.enableFullScreen,
                             enableSettings: widget.enableSettings,
+                            videoControllerTheme: widget.videoControllerTheme,
                           ),
                           transitionsBuilder: (___, Animation<double> animation, ____, Widget child) {
                             return FadeTransition(
