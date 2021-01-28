@@ -392,10 +392,10 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
                       ),
                     ),
                     onTap: () async {
-                      setState(() {
+                      /*setState(() {
                         _controller.pause();
-                      });
-                      position = await Navigator.push(
+                      });*/
+                      await Navigator.push(
                         context,
                         PageRouteBuilder(
                           opaque: false,
@@ -419,7 +419,12 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
                             );
                           },
                         ),
-                      );
+                      ).then((value) {
+                        setState(() {
+                          position = value;
+                        });
+                        Future.delayed(Duration(milliseconds: 100)).then((value) => setState(() {}));
+                      });
                       setState(() {
                         _controller.play();
                         _seek = true;

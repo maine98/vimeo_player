@@ -405,7 +405,6 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
                     )),
                     onTap: () async {
                       setState(() {
-                        _controller.pause();
                         SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
                         SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top, SystemUiOverlay.bottom]);
                       });
